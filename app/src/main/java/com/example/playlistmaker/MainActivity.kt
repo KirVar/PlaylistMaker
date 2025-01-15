@@ -8,6 +8,11 @@ import android.widget.Button
 
 class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
+
+        val sharedPrefs = getSharedPreferences(PREFERENCE, MODE_PRIVATE)
+        (applicationContext as App).switchTheme(sharedPrefs.getBoolean(SWITCH_KEY, false))
+
+
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
