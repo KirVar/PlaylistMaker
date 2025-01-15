@@ -11,9 +11,4 @@
     <string name="subject_text">Message to the developers and developers of the Playlist Maker app</string>
     <string name="message_text">Thanks to the developers and developers for the cool app!</string>
     <string name="send_to">Send to:</string>
-    <string name="nothing_found">Nothing found</string>
-    <string name="something_went_wrong">Something went wrong</string>
-    <string name="refresh">refresh</string>
-    <string name="You_searched">You searched</string>
-    <string name="Refresh_history">Refresh history</string>
 </resources>

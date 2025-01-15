@@ -76,29 +76,5 @@
             style="@style/ButtonRefreshStyleOnSearchDisplay">
         </Button>
     </LinearLayout>
-    <LinearLayout
-        android:id="@+id/historyLayout"
-        android:layout_height="match_parent"
-        android:layout_width="match_parent"
-        android:orientation="vertical"
-        android:visibility="gone">
-        <TextView
-            android:text="@string/You_searched"
-            style="@style/StyleOfTextOnSearchDisplay">
-        </TextView>
-        <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/rvHistory"
-            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
-            tools:listitem="@layout/track_item"
-            tools:itemCount="10"
-            style="@style/StyleRVHistory"
-            />
-        <Button
-            android:id="@+id/buttonHistoryRefresh"
-            android:text="@string/Refresh_history"
-            app:cornerRadius="54dp"
-            style="@style/ButtonRefreshStyleOnSearchDisplay">
-        </Button>
-    </LinearLayout>
 </LinearLayout>
 

@@ -28,7 +28,6 @@
             style="@style/SettingsDisplayTextes">
         </TextView>
         <Switch
-            android:id="@+id/themeSwitcher"
             style="@style/StyleForSwitch">
         </Switch>
     </FrameLayout>
