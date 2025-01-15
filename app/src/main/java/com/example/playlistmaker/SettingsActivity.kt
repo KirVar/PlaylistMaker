@@ -1,23 +1,14 @@
 package com.example.playlistmaker
-
-import android.annotation.SuppressLint
 import android.content.Intent
 import android.net.Uri
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.ImageView
-import android.widget.Switch
-
-const val PREFERENCE = "preference"
-const val SWITCH_KEY = "switch_key"
 
 class SettingsActivity : AppCompatActivity() {
-    @SuppressLint("UseSwitchCompatOrMaterialCode")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_settings)
-
-
 
         val buttonBack = findViewById<ImageView>(R.id.arrow_back_light)
         buttonBack.setOnClickListener {
@@ -53,15 +44,5 @@ class SettingsActivity : AppCompatActivity() {
             userAgreementIntent.data = Uri.parse(url)
             startActivity(userAgreementIntent)
         }
-        val themeSwitcher = findViewById<Switch>(R.id.themeSwitcher)
-
-        val sharedPrefs = getSharedPreferences(PREFERENCE, MODE_PRIVATE)
-        themeSwitcher.setOnCheckedChangeListener { _, isChecked ->
-            (applicationContext as App).switchTheme(isChecked)
-            sharedPrefs.edit()
-                .putBoolean(SWITCH_KEY, isChecked)
-                .apply()
-        }
-        themeSwitcher.isChecked = sharedPrefs.getBoolean(SWITCH_KEY, false)
     }
 }
