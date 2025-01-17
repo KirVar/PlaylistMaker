@@ -72,8 +72,8 @@ class SearchActivity : AppCompatActivity() {
         }
 
         inputEditText.setOnFocusChangeListener { _, hasFocus ->
-            updateHistoryView()
             historyLayout.visibility = if (hasFocus && inputEditText.text.isEmpty()) View.VISIBLE else View.GONE
+            updateHistoryView()
         }
 
         val clearButton = findViewById<ImageView>(R.id.buttonClearInputText)
