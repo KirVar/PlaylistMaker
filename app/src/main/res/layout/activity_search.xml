@@ -31,11 +31,11 @@
             android:singleLine="true"
             android:hint="@string/Search">
         </EditText>
+
         <ImageView
             android:id="@+id/buttonClearInputText"
-            android:src="@drawable/baseline_clear_12"
-            android:visibility="visible"
-            style="@style/ButtonStyleClearInputText">
+            style="@style/ButtonStyleClearInputText"
+            android:src="@drawable/baseline_clear_16">
         </ImageView>
     </FrameLayout>
     <androidx.recyclerview.widget.RecyclerView
