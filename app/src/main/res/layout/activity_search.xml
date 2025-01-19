@@ -31,10 +31,11 @@
             android:singleLine="true"
             android:hint="@string/Search">
         </EditText>
+
         <ImageView
             android:id="@+id/buttonClearInputText"
-            android:src="@drawable/baseline_clear_16"
-            style="@style/ButtonStyleClearInputText">
+            style="@style/ButtonStyleClearInputText"
+            android:src="@drawable/baseline_clear_16">
         </ImageView>
     </FrameLayout>
     <androidx.recyclerview.widget.RecyclerView
@@ -75,6 +76,38 @@
             android:text="@string/refresh"
             style="@style/ButtonRefreshStyleOnSearchDisplay">
         </Button>
+    </LinearLayout>
+    <LinearLayout
+        android:id="@+id/historyLayout"
+        android:layout_height="wrap_content"
+        android:layout_width="match_parent"
+        android:orientation="vertical"
+        android:visibility="gone">
+        <TextView
+            android:text="@string/You_searched"
+            style="@style/StyleOfTextOnSearchDisplay">
+        </TextView>
+            <androidx.core.widget.NestedScrollView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/rvHistory"
+                    app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                    tools:listitem="@layout/track_item"
+                    tools:itemCount="12"
+                    style="@style/StyleRVHistory"/>
+                <Button
+                    android:id="@+id/buttonHistoryRefresh"
+                    android:text="@string/Refresh_history"
+                    app:cornerRadius="54dp"
+                    style="@style/ButtonRefreshStyleOnSearchDisplay">
+                </Button>
+            </LinearLayout>
+            </androidx.core.widget.NestedScrollView>
     </LinearLayout>
 </LinearLayout>
 

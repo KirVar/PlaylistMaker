@@ -90,11 +90,10 @@
         <item name="android:layout_marginVertical">8dp</item>
         <item name="android:background">@drawable/rounded_edittext</item>
         <item name="android:drawableStart">@drawable/search_icon</item>
+        <item name="android:drawablePadding">8dp</item>
         <item name="android:paddingStart">12dp</item>
-        <item name="android:paddingEnd">12dp</item>
         <item name="android:inputType">text</item>
         <item name="android:lines">1</item>
-        <item name="android:drawablePadding">@dimen/indent_icon_to_text</item>
         <item name="android:textColorHint">@color/white2</item>
         <item name="android:fontFamily">@font/ys_display_regular</item>
         <item name="android:textSize">@dimen/little_textsize</item>
@@ -104,15 +103,16 @@
     </style>
 
     <style name="ButtonStyleClearInputText">
-        <item name="android:layout_width">24dp</item>
-        <item name="android:layout_height">24dp</item>
-        <item name="android:layout_marginVertical">14dp</item>
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:paddingVertical">10dp</item>
+        <item name="android:paddingHorizontal">12dp</item>
+        <item name="android:layout_marginVertical">8dp</item>
         <item name="android:layout_gravity">end</item>
-        <item name="android:layout_marginEnd">24dp</item>
+        <item name="android:layout_marginEnd">16dp</item>
         <item name="android:backgroundTint">@color/white2</item>
         <item name="tint">@color/grey</item>
         <item name="android:visibility">gone</item>
-        <item name="iconPadding">8dp</item>
     </style>
 
     <style name="AppNameOnMainDisplay">
@@ -255,5 +255,28 @@
         <item name="android:backgroundTint">@color/black2</item>
         <item name="android:insetTop">0dp</item>
         <item name="android:insetBottom">0dp</item>
+        <item name="android:layout_marginBottom">8dp</item>
+    </style>
+
+    <style name="StyleOfTextOnSearchDisplay">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">52dp</item>
+        <item name="android:textSize">19sp</item>
+        <item name="android:fontFamily">@font/ys_display_medium</item>
+        <item name="android:textColor">@color/black2</item>
+        <item name="android:textFontWeight">500</item>
+        <item name="android:layout_gravity">center_horizontal</item>
+        <item name="android:gravity">center</item>
+        <item name="android:layout_marginTop">24dp</item>
+        <item name="android:paddingTop">18dp</item>
+        <item name="android:paddingBottom">12dp</item>
+    </style>
+
+    <style name="StyleRVHistory">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:orientation">vertical</item>
+        <item name="android:background">@color/white</item>
+        <item name="android:layout_marginTop">8dp</item>
     </style>
 </resources>
