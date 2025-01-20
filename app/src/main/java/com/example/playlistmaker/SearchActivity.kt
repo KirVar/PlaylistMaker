@@ -43,13 +43,7 @@ class SearchActivity : AppCompatActivity() {
     private val onTrackClickListener = { tracks: Track ->
         searchHistory.addTrackToHistory(tracks)
         val playerIntent = Intent(this, PlayerActivity::class.java)
-        playerIntent.putExtra("keyNameSong", tracks.trackName)
-        playerIntent.putExtra("keyAuthorSong", tracks.artistName)
-        playerIntent.putExtra("keyDurationSong", tracks.trackTimeMillis)
-        playerIntent.putExtra("keyCollectionSong", tracks.collectionName)
-        playerIntent.putExtra("keyDataSong", tracks.releaseDate)
-        playerIntent.putExtra("keyGenreSong", tracks.primaryGenreName)
-        playerIntent.putExtra("keyCountrySong", tracks.country)
+        playerIntent.putExtra("Track", tracks)
         startActivity(playerIntent)
     }
     val adapter = TracksAdapter(tracks, onTrackClickListener)
