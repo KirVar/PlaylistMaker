@@ -1,0 +1,230 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    style="@style/ScrollViewStyleOnPlayerDisplay">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <ImageView
+        android:id="@+id/arrowBack"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/arrow_back_light"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        android:padding="12dp">
+    </ImageView>
+
+    <ImageView
+        android:id="@+id/bigAlbumCover"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="82dp"
+        android:layout_marginHorizontal="24dp"
+        android:src="@drawable/big_placeholder"
+        android:scaleType="center"
+        app:layout_constraintDimensionRatio="h,1:1">
+    </ImageView>
+    
+    <TextView
+        android:id="@+id/songName"
+        app:layout_constraintTop_toBottomOf="@id/bigAlbumCover"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        tools:text="Yesterday (Remastered 2009)"
+        style="@style/SongNameStyleOnPlayerDisplay">
+    </TextView>
+
+    <TextView
+        android:id="@+id/authorOfSong"
+        app:layout_constraintTop_toBottomOf="@id/songName"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        tools:text="The Beatles"
+        style="@style/AuthorOfSongStyleOnPlayerDisplay">
+    </TextView>
+
+    <ImageView
+        android:id="@+id/buttonPlay"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/button_play"
+        android:padding="8dp"
+        app:layout_constraintTop_toBottomOf="@+id/authorOfSong"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="30dp">
+    </ImageView>
+
+    <ImageView
+        android:id="@+id/buttonShare"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/button_share"
+        app:layout_constraintTop_toTopOf="@+id/buttonPlay"
+        app:layout_constraintBottom_toBottomOf="@id/buttonPlay"
+        app:layout_constraintStart_toStartOf="@id/authorOfSong">
+    </ImageView>
+
+    <ImageView
+        android:id="@+id/buttonFavorite"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/button_favorite"
+        app:layout_constraintTop_toTopOf="@+id/buttonPlay"
+        app:layout_constraintBottom_toBottomOf="@id/buttonPlay"
+        app:layout_constraintEnd_toEndOf="@id/authorOfSong">
+    </ImageView>
+
+    <TextView
+        android:id="@+id/songDuration"
+        app:layout_constraintTop_toBottomOf="@id/buttonPlay"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:text="00:00"
+        style="@style/SongDurationStyleOnPlayerDisplay">
+    </TextView>
+
+    <TextView
+        android:id="@+id/textDuration"
+        android:layout_width="wrap_content"
+        android:layout_height="15dp"
+        app:layout_constraintTop_toBottomOf="@id/songDuration"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toStartOf="@id/allDurationSong"
+        android:layout_marginTop="39dp"
+        android:text="@string/Duration"
+        android:paddingEnd="31dp"
+        android:layout_marginStart="16dp"
+        style="@style/SongAttributesStyle">
+    </TextView>
+
+    <TextView
+        android:id="@+id/allDurationSong"
+        android:layout_width="0dp"
+        android:layout_height="15dp"
+        app:layout_constraintTop_toBottomOf="@id/songDuration"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/textDuration"
+        android:layout_marginTop="39dp"
+        tools:text="5:35"
+        android:layout_marginEnd="16dp"
+        style="@style/SongSpecificationsStyle">
+    </TextView>
+
+    <TextView
+        android:id="@+id/textAlbum"
+        android:layout_width="0dp"
+        android:layout_height="15dp"
+        app:layout_constraintTop_toBottomOf="@id/textDuration"
+        app:layout_constraintStart_toStartOf="@id/textDuration"
+        app:layout_constraintEnd_toStartOf="@id/albumSong"
+        android:layout_marginTop="17dp"
+        android:text="@string/Album"
+        style="@style/SongAttributesStyle">
+    </TextView>
+
+    <TextView
+        android:id="@+id/albumSong"
+        android:layout_width="0dp"
+        android:layout_height="15dp"
+        app:layout_constraintTop_toBottomOf="@id/allDurationSong"
+        app:layout_constraintEnd_toEndOf="@id/allDurationSong"
+        app:layout_constraintStart_toStartOf="@id/allDurationSong"
+        android:layout_marginTop="17dp"
+        tools:text="Yesterday (Remastered 2009)"
+        style="@style/SongSpecificationsStyle"
+        android:maxLines="1"
+        android:ellipsize="end"
+        android:singleLine="true">
+    </TextView>
+
+    <TextView
+        android:id="@+id/textYear"
+        android:layout_width="0dp"
+        android:layout_height="15dp"
+        app:layout_constraintTop_toBottomOf="@id/textAlbum"
+        app:layout_constraintStart_toStartOf="@id/textAlbum"
+        app:layout_constraintEnd_toStartOf="@id/albumSong"
+        android:layout_marginTop="17dp"
+        android:text="@string/Year"
+        style="@style/SongAttributesStyle">
+    </TextView>
+
+    <TextView
+        android:id="@+id/yearOfSong"
+        android:layout_width="0dp"
+        android:layout_height="15dp"
+        app:layout_constraintTop_toBottomOf="@id/albumSong"
+        app:layout_constraintEnd_toEndOf="@id/albumSong"
+        app:layout_constraintStart_toEndOf="@id/textYear"
+        android:layout_marginTop="17dp"
+        tools:text="1965"
+        style="@style/SongSpecificationsStyle">
+    </TextView>
+
+    <TextView
+        android:id="@+id/textGenre"
+        android:layout_width="0dp"
+        android:layout_height="15dp"
+        app:layout_constraintTop_toBottomOf="@id/textYear"
+        app:layout_constraintStart_toStartOf="@id/textYear"
+        app:layout_constraintEnd_toStartOf="@id/albumSong"
+        android:layout_marginTop="17dp"
+        android:text="@string/Genre"
+        style="@style/SongAttributesStyle">
+    </TextView>
+
+    <TextView
+        android:id="@+id/genreOfSong"
+        android:layout_width="0dp"
+        android:layout_height="15dp"
+        app:layout_constraintTop_toBottomOf="@id/yearOfSong"
+        app:layout_constraintEnd_toEndOf="@id/yearOfSong"
+        app:layout_constraintStart_toEndOf="@id/textGenre"
+        android:layout_marginTop="17dp"
+        tools:text="Rock"
+        style="@style/SongSpecificationsStyle">
+    </TextView>
+
+    <TextView
+        android:id="@+id/textCountry"
+        android:layout_width="0dp"
+        android:layout_height="15dp"
+        app:layout_constraintTop_toBottomOf="@id/textGenre"
+        app:layout_constraintStart_toStartOf="@id/textGenre"
+        app:layout_constraintEnd_toStartOf="@id/albumSong"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_marginTop="17dp"
+        android:text="@string/Country"
+        android:layout_marginBottom="28dp"
+        style="@style/SongAttributesStyle">
+    </TextView>
+
+    <TextView
+        android:id="@+id/countryOfSong"
+        android:layout_width="0dp"
+        android:layout_height="15dp"
+        app:layout_constraintTop_toBottomOf="@id/genreOfSong"
+        app:layout_constraintEnd_toEndOf="@id/genreOfSong"
+        app:layout_constraintStart_toEndOf="@id/textCountry"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_marginTop="17dp"
+        tools:text="Великобритания"
+        android:layout_marginBottom="28dp"
+        style="@style/SongSpecificationsStyle"
+        >
+    </TextView>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+</ScrollView>

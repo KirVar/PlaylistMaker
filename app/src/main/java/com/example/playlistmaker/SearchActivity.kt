@@ -42,6 +42,9 @@ class SearchActivity : AppCompatActivity() {
     private val iTunesAPISearchService = retrofit.create(ITunesAPI::class.java)
     private val onTrackClickListener = { tracks: Track ->
         searchHistory.addTrackToHistory(tracks)
+        val playerIntent = Intent(this, PlayerActivity::class.java)
+        playerIntent.putExtra("Track", tracks)
+        startActivity(playerIntent)
     }
     val adapter = TracksAdapter(tracks, onTrackClickListener)
 
